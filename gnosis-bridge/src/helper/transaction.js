@@ -37,7 +37,7 @@ const createTransactionObject = async (method, toAddress, value, txHash) => {
 
   // Fetch certificates based on the transaction hash
   const queryResponse = await dbApiClient.get(
-    `/BlockApps-Mercata-MercataETHBridge`,
+    `/BlockApps-Mercata-MercataGnosisBridge`,
     {
       params: { isActive: `eq.true`, creator: `eq.BlockApps`, ['data->>isMint']: `eq.True` },
     }
@@ -48,15 +48,15 @@ const createTransactionObject = async (method, toAddress, value, txHash) => {
 
   // Handle case where no data is returned
   if (!queryBody || queryBody.length === 0) {
-    console.warn(`No MercataETHBridge contracts found on the Mercata network.`);
+    console.warn(`No MercataGnosisBridge contracts found on the Mercata network.`);
     return;
   }
 
-  console.log("MercataETHBridge retrieved successfully:", queryBody);
+  console.log("MercataGnosisBridge retrieved successfully:", queryBody);
 
   return {
     payload: {
-      contractName: "MercataETHBridge",
+      contractName: "MercataGnosisBridge",
       contractAddress: queryBody[0].address,
       method,
       args: {

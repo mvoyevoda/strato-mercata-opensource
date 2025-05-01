@@ -1,10 +1,9 @@
-pragma es6;
 pragma strict;
 
 import <BASE_CODE_COLLECTION>;
 
 /// @title A representation of Token assets
-contract SimpleMercataETHBridge is Tokens, MercataETHBridge {
+contract SimpleMercataGnosisBridge is Tokens, MercataGnosisBridge {
 
     constructor(
         string _name,
@@ -16,8 +15,8 @@ contract SimpleMercataETHBridge is Tokens, MercataETHBridge {
         uint _quantity,
         AssetStatus _status,
         address _redemptionService
-    ) public Tokens(_name, _description, _images, _files, _fileNames, _createdDate, _quantity, _status, _redemptionService) MercataETHBridge() {
-        ethSt = address(this);
+    ) public Tokens(_name, _description, _images, _files, _fileNames, _createdDate, _quantity, _status, _redemptionService) MercataGnosisBridge() {
+        gnosisSt = address(this);
     }
 
     function mint(uint _quantity) internal override returns (UTXO) {

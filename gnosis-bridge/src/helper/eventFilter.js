@@ -1,6 +1,5 @@
 const fs = require("fs");
 const path = require("path");
-
 const filePath = path.join(__dirname, "..", "config", "latestBlock.json");
 
 let latestBlockNumber;
@@ -55,7 +54,7 @@ async function filterMessages(msg) {
     );
 
     // List of allowed event names
-    const allowedEvents = ["BurnedETHST"];
+    const allowedEvents = ["BurnedGnosis"];
 
     // Check if the event name is one of the allowed events
     if (!eventName || !allowedEvents.includes(eventName)) {
