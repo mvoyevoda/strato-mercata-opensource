@@ -16,7 +16,7 @@ contract SimpleMercataGnosisBridge is Tokens, MercataGnosisBridge {
         AssetStatus _status,
         address _redemptionService
     ) public Tokens(_name, _description, _images, _files, _fileNames, _createdDate, _quantity, _status, _redemptionService) MercataGnosisBridge() {
-        gnosisSt = address(this);
+        gnosisWethStAddress = address(this);
     }
 
     function mint(uint _quantity) internal override returns (UTXO) {

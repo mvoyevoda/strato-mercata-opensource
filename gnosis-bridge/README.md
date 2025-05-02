@@ -1,4 +1,4 @@
-# Eth Bridge
+# Gnosis Bridge
 
 ## Connection info
 - No ports exposed
@@ -6,8 +6,8 @@
 
 ## Deploy dockerized
 
-1. Create `.env` and `secrets.json` in the eth-bridge folder.
-2. Create `latestBlock.json` in the eth-bridge/config folder.
+1. Create `.env` and `secrets.json` in the gnosis-bridge folder.
+2. Create `latestBlock.json` in the gnosis-bridge/config folder.
    ```
    {
     "latestBlockNumber" : 0
